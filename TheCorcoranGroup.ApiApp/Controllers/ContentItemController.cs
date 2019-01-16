@@ -28,6 +28,11 @@ namespace TheCorcoranGroup.ApiApp.Controllers
             _contentItemService = new ContentItemService(_contentItemRepository);
         }
 
+        public ContentItemController(IContentItemService contentItemService)
+        {
+            _contentItemService = contentItemService;
+        }
+
         [HttpGet]
         [ResponseType(typeof(string))]
         [Route("")]
